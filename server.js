@@ -1,8 +1,8 @@
-require('dotenv').config()
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const redisClient = require('./clients/redisClient')
+// const redisClient = require('./redisClient')
 
 
 app.use(bodyParser.json())
@@ -37,4 +37,8 @@ app.use('/v1', require('./routes/v1'))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+})
+
+app.get("/", (req,res)=>{
+  res.send("Hello BE .......")
 })
